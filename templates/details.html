@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Pressure Stage Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #eef2f3, #dfe6e9);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #0984e3;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3436;
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Center content area */
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 140px); /* Adjust for header & footer */
+            padding: 20px;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2d3436;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2d3436;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #b2bec3;
+            font-size: 14px;
+            background-color: #f8f9fa;
+            transition: border-color 0.3s;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #0984e3;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #0984e3;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #74b9ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        🩺 Blood Pressure Stage Checker
+    </header>
+
+    <main>
+        <form method="POST">
+            <div>
+                <label for="gender">Gender:</label>
+                <select name="gender" id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="age">Age:</label>
+                <select name="age" id="age">
+                    <option value="18-34">18-34</option>
+                    <option value="35-50">35-50</option>
+                    <option value="51-64">51-64</option>
+                    <option value="65+">65+</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="history">History:</label>
+                <select name="history" id="history">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="patient">Patient:</label>
+                <select name="patient" id="patient">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="take_medication">Take Medication:</label>
+                <select name="take_medication" id="take_medication">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="severity">Severity:</label>
+                <select name="severity" id="severity">
+                    <option value="Mild">Mild</option>
+                    <option value="Sever">Sever</option>
+                    <option value="Moderate">Moderate</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="breathe_shortness">Breath Shortness:</label>
+                <select name="breathe_shortness" id="breathe_shortness">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="visual_change">Visual Changes:</label>
+                <select name="visual_change" id="visual_change">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="nose_bleeding">Nose Bleeding:</label>
+                <select name="nose_bleeding" id="nose_bleeding">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="when_diagnosed">When diagnosed:</label>
+                <select name="when_diagnosed" id="when_diagnosed">
+                    <option value="<1 Year">&lt;1 Year</option>
+                    <option value="1 - 5 Years">1 - 5 Years</option>
+                    <option value=">5 Years">&gt;5 Years</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="systolic">Systolic:</label>
+                <select name="systolic" id="systolic">
+                    <option value="111 - 120">111 - 120</option>
+                    <option value="121- 130">121- 130</option>
+                    <option value="130+">130+</option>
+                    <option value="100+">100+</option>
+                    <option value="121 - 130">121 - 130</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="diastolic">Diastolic:</label>
+                <select name="diastolic" id="diastolic">
+                    <option value="81 - 90">81 - 90</option>
+                    <option value="91 - 100">91 - 100</option>
+                    <option value="100+">100+</option>
+                    <option value="130+">130+</option>
+                    <option value="70 - 80">70 - 80</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="controlled_diet">Controlled diet:</label>
+                <select name="controlled_diet" id="controlled_diet">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+
+    <footer>
+        &copy; 2025 Blood Pressure Stage Checker | Designed for Health Awareness
+    </footer>
+</body>
+</html>

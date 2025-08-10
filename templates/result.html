@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Pressure Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #eef2f3, #dfe6e9);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0984e3;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #2d3436;
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 140px);
+            padding: 20px;
+        }
+
+        .result-card {
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+
+        /* Color themes for different results */
+        .normal {
+            background-color: #2ecc71; /* Green */
+        }
+        .stage1 {
+            background-color: #e67e22; /* Orange */
+        }
+        .stage2 {
+            background-color: #e74c3c; /* Red */
+        }
+        .crisis {
+            background-color: #8e0000; /* Dark Red */
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: white;
+            color: #2d3436;
+            border-radius: 6px;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    🩺 Blood Pressure Stage Checker
+</header>
+
+<main>
+    <!-- Change the class based on the prediction -->
+    <div class="result-card stage1">
+        {{result}}
+    </div>
+</main>
+
+<footer>
+    &copy; 2025 Blood Pressure Stage Checker | Designed for Health Awareness
+</footer>
+
+</body>
+</html>
